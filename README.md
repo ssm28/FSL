@@ -13,6 +13,9 @@ python generator.py --repro          # generate twice with the same seed, compar
 streamlit run app.py                 # pick "starter" or "full" in the sidebar
 ```
 
+## Link to the Webapp
+[Click Me](https://stl-forecast.streamlit.app/)
+
 ## Output layout (created by `python generator.py`)
 ```
 out/
