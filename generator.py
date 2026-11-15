@@ -1,13 +1,11 @@
 """Synthetic data generator. Same code for starter and full scale (parameters only).
-  python generator.py                       -> full dataset (30 ent / 150 acc / 100k ledger), seed 20261022
-  python generator.py --entities 5 --accounts 25 --ledger 3000   -> starter dataset
-  python generator.py --export              -> also CSV + SQL seed + manifest in data/export
-  python generator.py --repro               -> generate twice, compare row counts + checksums
+  python generator.py                  -> builds BOTH datasets into out/starter and out/full (db + csv/ + json/ + ground truth)
+  python generator.py --only starter   -> just one of them (starter | full)
+  python generator.py --repro          -> generate twice (starter by default, or --only full), compare row counts + checksums
 """
 import argparse
 import hashlib
 import json
-import shutil
 import tempfile
 from pathlib import Path
 
@@ -24,6 +22,9 @@ DRIFT = {"EUR": 0.0, "GBP": 0.0, "INR": -0.0003, "JPY": -0.0004}  # documented F
 TYPES = ["OPERATING", "COLLECTION", "PAYROLL", "TAX", "RESERVE"]
 BANKS = ["Atlas Bank", "Meridian Bank", "Northwind Bank", "Sunrise Bank"]
 START, CUTOFF, END = pd.Timestamp("2026-01-01"), pd.Timestamp("2026-06-30"), pd.Timestamp("2026-08-29")
+PROFILES = {"starter": dict(entities=5, accounts=25, ledger=4000),
+            "full": dict(entities=30, accounts=150, ledger=100000)}
+OUT = "out"
 AS_OFS = [("2026-04-01", 30), ("2026-05-01", 30), ("2026-05-31", 30), ("2026-06-30", 60)]  # (as_of, horizon)
 SCN = [("SCN-BASE", "Base", "Contractual dates, no adjustments", 0, 0.0, 0, 0.0),
        ("SCN-DELAYED", "Delayed receipts", "All receipts arrive 14 days later than expected", 14, 0.0, 0, 0.0),
@@ -235,21 +236,37 @@ def table_hashes(conn):
     return res
 
 
-def export(db=E.DB, out="data/export", params=None):
+def export(db, out, params=None):
+    """Write every table as CSV and JSON (plus ground truth, SQL seed, manifest) under <out>/csv, <out>/json."""
     params = params or {}
     out = Path(out)
-    out.mkdir(parents=True, exist_ok=True)
+    (out / "csv").mkdir(parents=True, exist_ok=True)
+    (out / "json").mkdir(parents=True, exist_ok=True)
     conn = E.connect(db)
     for t in table_hashes(conn):
-        E.q(conn, f"SELECT * FROM {t}").to_csv(out / f"{t}.csv", index=False)
+        df = E.q(conn, f"SELECT * FROM {t}")
+        df.to_csv(out / "csv" / f"{t}.csv", index=False)
+        df.to_json(out / "json" / f"{t}.json", orient="records", indent=2)
+    gt = pd.read_csv(out / "ground_truth.csv")
+    gt.to_csv(out / "csv" / "ground_truth.csv", index=False)
+    gt.to_json(out / "json" / "ground_truth.json", orient="records", indent=2)
     (out / "seed_data.sql").write_text("\n".join(conn.iterdump()))
     cmd = "python generator.py " + " ".join(f"--{k} {v}" for k, v in params.items())
-    (out / "manifest.json").write_text(json.dumps({"generator_command": cmd, "params": params, "sources": "none - fully synthetic, no external data",
+    (out / "manifest.json").write_text(json.dumps({"generator_command": cmd, "params": params,
+                                                   "sources": "none - fully synthetic, no external data",
                                                    "tables": table_hashes(conn)}, indent=2))
-    for f in ("ground_truth.csv", "validation_summary.json"):
-        shutil.copy(Path(db).parent / f, out / f)
     conn.close()
     return out
+
+
+def build(name, seed=20261022, log=print, **override):
+    """Generate one dataset into out/<name>/ : liquidity.db, csv/, json/, ground_truth, validation summary, manifest."""
+    kw = {**PROFILES.get(name, PROFILES["full"]), **override}
+    folder = Path(OUT) / name
+    generate(str(folder / "liquidity.db"), seed=seed, log=log, **kw)
+    export(str(folder / "liquidity.db"), folder, {**kw, "only": name, "seed": seed})
+    log(f"exported -> {folder}/csv and {folder}/json")
+    return folder
 
 
 def repro(**kw):
@@ -267,18 +284,13 @@ def repro(**kw):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default=E.DB)
-    ap.add_argument("--entities", type=int, default=30)
-    ap.add_argument("--accounts", type=int, default=150)
-    ap.add_argument("--ledger", type=int, default=100000)
+    ap.add_argument("--only", choices=list(PROFILES))
     ap.add_argument("--seed", type=int, default=20261022)
-    ap.add_argument("--export", action="store_true")
     ap.add_argument("--repro", action="store_true")
     a = ap.parse_args()
-    kw = dict(entities=a.entities, accounts=a.accounts, ledger=a.ledger, seed=a.seed)
     if a.repro:
-        repro(**kw)
+        repro(seed=a.seed, **PROFILES[a.only or "starter"])
     else:
-        generate(a.db, **kw)
-        if a.export:
-            print("exported to", export(a.db, params=kw))
+        for name in ([a.only] if a.only else PROFILES):
+            print(f"=== {name} ===")
+            build(name, a.seed)

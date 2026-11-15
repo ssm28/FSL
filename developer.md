@@ -9,7 +9,7 @@
 | `schema.sql` | Database | All tables, PK/FK, enums (CHECK), ID format checks, indexes. |
 | `requirements.txt`, `README.md`, `developer.md` | Docs | Setup and explanation. |
 
-Created at run time (not shipped): `data/liquidity.db`, `data/ground_truth.csv`, `data/validation_summary.json`, `data/export/*`.
+Created at run time (not shipped): `out/starter/` and `out/full/`, each with `liquidity.db`, `csv/`, `json/`, `ground_truth.csv`, `validation_summary.json`, `manifest.json`, `seed_data.sql`. `generator.PROFILES` defines the two sizes; `generator.build(name)` = `generate` + `export`.
 
 ## 2. How the whole thing flows
 ```
@@ -74,16 +74,16 @@ Receivable/Payable 1:1 LedgerEntry when settled (via `ref_id`) · Receivable/Pay
 | FORECAST_USES_ACTUAL | forecast_date set from a settlement after as-of | `actual_date_used > as_of_date` |
 | CURRENCY_MIXED | non-USD rows with `fx_rate_used=1.0` | currency ≠ USD and rate = 1 |
 
-`data/ground_truth.csv` (`gt_id, table_name, record_id, issue_type, description, expected_decision, is_anomaly`) also labels `DELAYED_RECEIVABLE` (>14 days) and `LARGE_ONE_OFF_PAYMENT`. The app/detector never read it, except the scoring table (precision/recall) on the *Data quality* tab.
+`out/<dataset>/ground_truth.csv` (`gt_id, table_name, record_id, issue_type, description, expected_decision, is_anomaly`) also labels `DELAYED_RECEIVABLE` (>14 days) and `LARGE_ONE_OFF_PAYMENT`. The app/detector never read it, except the scoring table (precision/recall) on the *Data quality* tab.
 
 ## 6. Validation (`engine.CHECKS`, each must return 0)
 FK integrity · ID formats · ledger currency = account currency · dates in range and ordered · forecast after as-of · daily position arithmetic · cutoff position = opening + ledger · PAID ⇒ ledger entry and PAID event · no double-posted ledger refs · BASE has zero adjustments · variance arithmetic + reason present.
 
 ## 7. Reproducibility
-One `numpy.default_rng(seed)` drives everything, fixed seed `20261022`, fixed `created_at` for generated runs, deterministic sort orders. `--repro` generates twice and compares per-table row counts and SHA-256 of the sorted table contents. `--export` writes them in `manifest.json` with the exact command.
+One `numpy.default_rng(seed)` drives everything, fixed seed `20261022`, fixed `created_at` for generated runs, deterministic sort orders. `--repro` generates twice and compares per-table row counts and SHA-256 of the sorted table contents. Every build writes them to `manifest.json` with the exact command.
 
 ## 8. Common changes
-- Scale: CLI flags `--entities --accounts --ledger --seed` (receivables = payables = 7.5% of ledger rows; forecast ≈ 20k at full scale).
+- Scale: edit `PROFILES` in `generator.py` (or use the Data admin tab); `--seed` on the CLI (receivables = payables = 7.5% of ledger rows; forecast ≈ 20k at full scale).
 - New scenario: add a tuple to `SCN` in `generator.py`, or insert a row in `LiquidityScenario`; it appears in the app automatically.
 - New check: add a `name: SQL returning a violation count` entry in `engine.CHECKS`.
 - New anomaly: inject in `generator.generate` step 6, add a `detect` rule, add the name to `engine.ANOM` and `DECISION`.

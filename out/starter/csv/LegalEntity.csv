@@ -1,0 +1,6 @@
+entity_id,legal_name,country,base_currency,status,effective_from,effective_to
+ENT-000001,Entity 01 Holdings,US,USD,ACTIVE,2026-01-01,
+ENT-000002,Entity 02 Holdings,US,USD,ACTIVE,2026-01-01,
+ENT-000003,Entity 03 Holdings,US,USD,ACTIVE,2026-01-01,
+ENT-000004,Entity 04 Holdings,US,USD,ACTIVE,2026-01-01,
+ENT-000005,Entity 05 Holdings,US,USD,ACTIVE,2026-01-01,

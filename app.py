@@ -8,9 +8,10 @@ import streamlit as st
 import engine as E
 import generator as G
 
-DB = E.DB
-GT = Path(DB).parent / "ground_truth.csv"
 st.set_page_config(page_title="Liquidity Forecast MVP", layout="wide")
+DS = st.sidebar.selectbox("Dataset", list(G.PROFILES), index=1)  # out/<dataset>/liquidity.db
+DB = f"{G.OUT}/{DS}/liquidity.db"
+GT = Path(DB).parent / "ground_truth.csv"
 
 
 def call(fn, *a):
@@ -25,8 +26,8 @@ def Q(sql, p=()):
     return call(E.q, sql, p)
 
 
-def mt():  # DB modification time -> cache key, so caches refresh after any write
-    return Path(DB).stat().st_mtime if Path(DB).exists() else 0
+def mt():  # (dataset, DB modification time) -> cache key, so caches refresh after any write
+    return (DB, Path(DB).stat().st_mtime if Path(DB).exists() else 0)
 
 
 @st.cache_data(show_spinner=False)
@@ -45,21 +46,21 @@ def validate_cached(stamp):
 
 
 def scale_form(k):
-    c = st.columns(4)
-    return (int(c[0].number_input("Entities", 1, 100, 30, key=k + "1")), int(c[1].number_input("Bank accounts", 1, 500, 150, key=k + "2")),
-            int(c[2].number_input("Ledger entries", 500, 500000, 100000, step=500, key=k + "3")), int(c[3].number_input("Seed", value=20261022, key=k + "4")))
+    p, c = G.PROFILES[DS], st.columns(4)
+    return (int(c[0].number_input("Entities", 1, 100, p["entities"], key=k + DS + "1")), int(c[1].number_input("Bank accounts", 1, 500, p["accounts"], key=k + DS + "2")),
+            int(c[2].number_input("Ledger entries", 500, 500000, p["ledger"], step=500, key=k + DS + "3")), int(c[3].number_input("Seed", value=20261022, key=k + DS + "4")))
 
 
 def regenerate(e, a, l, s):
     with st.spinner("Generating (full scale takes ~1 min)..."):
-        G.generate(DB, e, a, l, s, log=lambda *x: None)
+        G.build(DS, s, log=lambda *x: None, entities=e, accounts=a, ledger=l)
     st.cache_data.clear()
     st.rerun()
 
 
 st.title("Short-term Liquidity Forecast")
 if not Path(DB).exists():
-    st.warning("No database yet. Generate the synthetic dataset first (use a small size for a quick start).")
+    st.warning(f"No {DS} dataset yet. Run `python generator.py` (builds both), or generate this one here.")
     e, a, l, s = scale_form("first")
     if st.button("Generate data", type="primary"):
         regenerate(e, a, l, s)
@@ -168,7 +169,7 @@ def quality_tab():
         st.dataframe(E.evaluate(detect_cached(mt()), pd.read_csv(GT)), hide_index=True)
         st.caption("ground_truth.csv is a separate file, used only here for scoring.")
     else:
-        st.info("data/ground_truth.csv not found.")
+        st.info("ground_truth.csv not found.")
 
 
 def admin_tab():
@@ -178,7 +179,7 @@ def admin_tab():
         regenerate(e, a, l, s)
     c = st.columns(2)
     if c[0].button("Export CSV / SQL / manifest"):
-        st.success(f"Exported to {G.export(DB, params=dict(entities=e, accounts=a, ledger=l, seed=s))}")
+        st.success(f"Exported to {G.export(DB, Path(DB).parent, dict(entities=e, accounts=a, ledger=l, seed=s))}")
     if c[1].button("Reproducibility check (2 runs)"):
         with st.spinner("Generating twice..."):
             same, h = G.repro(entities=e, accounts=a, ledger=l, seed=s)

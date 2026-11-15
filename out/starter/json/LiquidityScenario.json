@@ -1,0 +1,29 @@
+[
+  {
+    "scenario_id":"SCN-BASE",
+    "name":"Base",
+    "description":"Contractual dates, no adjustments",
+    "receipt_delay_days":0,
+    "receipt_haircut_pct":0.0,
+    "payable_accel_days":0,
+    "fx_shock_pct":0.0
+  },
+  {
+    "scenario_id":"SCN-DELAYED",
+    "name":"Delayed receipts",
+    "description":"All receipts arrive 14 days later than expected",
+    "receipt_delay_days":14,
+    "receipt_haircut_pct":0.0,
+    "payable_accel_days":0,
+    "fx_shock_pct":0.0
+  },
+  {
+    "scenario_id":"SCN-STRESS",
+    "name":"Stress",
+    "description":"Receipts +21 days and 10% haircut, payables 7 days earlier, non-USD -10% vs USD",
+    "receipt_delay_days":21,
+    "receipt_haircut_pct":10.0,
+    "payable_accel_days":7,
+    "fx_shock_pct":-10.0
+  }
+]

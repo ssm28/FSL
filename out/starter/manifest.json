@@ -1,0 +1,65 @@
+{
+  "generator_command": "python generator.py --entities 5 --accounts 25 --ledger 4000 --only starter --seed 20261022",
+  "params": {
+    "entities": 5,
+    "accounts": 25,
+    "ledger": 4000,
+    "only": "starter",
+    "seed": 20261022
+  },
+  "sources": "none - fully synthetic, no external data",
+  "tables": {
+    "BankAccount": {
+      "rows": 25,
+      "sha256": "7f00225a4a72083ed28cd35f01b33a4e429209341f4d44265ea0d3e6bda8333c"
+    },
+    "CashFlowForecast": {
+      "rows": 775,
+      "sha256": "71dc6f1f63408202d2924c15b4e71094ba3aeb3ad7b0146d20554f760537d4f5"
+    },
+    "CurrencyRate": {
+      "rows": 899,
+      "sha256": "1730beb5d4d5c27f433bd47a7214951ce7049f375d421d0f6ce387c01751090f"
+    },
+    "DailyCashPosition": {
+      "rows": 4525,
+      "sha256": "b8cf728b246260e26912828fdbfba72e8faadb8f6781e67c7e49e94e5a553c5f"
+    },
+    "ForecastActualMatch": {
+      "rows": 542,
+      "sha256": "c17dbe64ca297cdb1188e58c2710bc31ae67a4c7974805e749da3f2b54fb839b"
+    },
+    "ForecastRun": {
+      "rows": 12,
+      "sha256": "0905f4ed213738c2d6f6853c893302c2ccc99e9487f5ff4104ace5199993125f"
+    },
+    "LedgerEntry": {
+      "rows": 4000,
+      "sha256": "841e9705ccced82b825a70198187e1811468b2b0dfd9fbcedd942cd597f6f007"
+    },
+    "LegalEntity": {
+      "rows": 5,
+      "sha256": "bdb6adec3c930267dc68ce2a8bae4f2448c1a7615d6ffdc8478c556a6ba1e314"
+    },
+    "LiquidityScenario": {
+      "rows": 3,
+      "sha256": "e48b09b7505102f9bf7fb50aa19d4ff91fd46bd0528ca64ffa2ee33f9dc80028"
+    },
+    "Payable": {
+      "rows": 300,
+      "sha256": "518986744066fb155f7f911b244f84fc92ed03ced285dedc373320d5b0c0cc03"
+    },
+    "Receivable": {
+      "rows": 300,
+      "sha256": "00ac72763aecc7df27d2b8badece31396464d3c05167be5d18cc48cd30759edf"
+    },
+    "ReviewDecision": {
+      "rows": 0,
+      "sha256": "567cd2b18efcebabf4a5aa91d90befbc06f69d7258aaf5f8ea8c5856c7f36b8b"
+    },
+    "StatusEvent": {
+      "rows": 1263,
+      "sha256": "0b69dfa95e3d3d0b6d9dcb79870a22064a01d546d6c7d410e50f8d393302fa62"
+    }
+  }
+}

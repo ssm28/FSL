@@ -1,0 +1,272 @@
+[
+  {
+    "entity_id":"ENT-000001",
+    "legal_name":"Entity 01 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000002",
+    "legal_name":"Entity 02 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000003",
+    "legal_name":"Entity 03 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000004",
+    "legal_name":"Entity 04 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000005",
+    "legal_name":"Entity 05 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000006",
+    "legal_name":"Entity 06 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000007",
+    "legal_name":"Entity 07 Holdings",
+    "country":"IN",
+    "base_currency":"INR",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000008",
+    "legal_name":"Entity 08 Holdings",
+    "country":"DE",
+    "base_currency":"EUR",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000009",
+    "legal_name":"Entity 09 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000010",
+    "legal_name":"Entity 10 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000011",
+    "legal_name":"Entity 11 Holdings",
+    "country":"IN",
+    "base_currency":"INR",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000012",
+    "legal_name":"Entity 12 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000013",
+    "legal_name":"Entity 13 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000014",
+    "legal_name":"Entity 14 Holdings",
+    "country":"IN",
+    "base_currency":"INR",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000015",
+    "legal_name":"Entity 15 Holdings",
+    "country":"JP",
+    "base_currency":"JPY",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000016",
+    "legal_name":"Entity 16 Holdings",
+    "country":"GB",
+    "base_currency":"GBP",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000017",
+    "legal_name":"Entity 17 Holdings",
+    "country":"DE",
+    "base_currency":"EUR",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000018",
+    "legal_name":"Entity 18 Holdings",
+    "country":"JP",
+    "base_currency":"JPY",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000019",
+    "legal_name":"Entity 19 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000020",
+    "legal_name":"Entity 20 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000021",
+    "legal_name":"Entity 21 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000022",
+    "legal_name":"Entity 22 Holdings",
+    "country":"IN",
+    "base_currency":"INR",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000023",
+    "legal_name":"Entity 23 Holdings",
+    "country":"IN",
+    "base_currency":"INR",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000024",
+    "legal_name":"Entity 24 Holdings",
+    "country":"GB",
+    "base_currency":"GBP",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000025",
+    "legal_name":"Entity 25 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000026",
+    "legal_name":"Entity 26 Holdings",
+    "country":"GB",
+    "base_currency":"GBP",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000027",
+    "legal_name":"Entity 27 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000028",
+    "legal_name":"Entity 28 Holdings",
+    "country":"DE",
+    "base_currency":"EUR",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000029",
+    "legal_name":"Entity 29 Holdings",
+    "country":"IN",
+    "base_currency":"INR",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000030",
+    "legal_name":"Entity 30 Holdings",
+    "country":"GB",
+    "base_currency":"GBP",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  }
+]

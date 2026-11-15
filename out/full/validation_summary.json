@@ -1,0 +1,77 @@
+{
+  "seed": 20261022,
+  "validation": {
+    "Foreign key integrity": 0,
+    "Entity ID format": 0,
+    "Account ID = BANKACC-<entity>-NNN": 0,
+    "Ledger/CF/Run ID formats": 0,
+    "Ledger currency = account currency": 0,
+    "Ledger dates inside account window": 0,
+    "Receivable/Payable date order": 0,
+    "Forecast date after as-of date": 0,
+    "Daily position: opening+net=closing": 0,
+    "Cutoff position = opening + ledger": 0,
+    "PAID items have ledger entry": 0,
+    "PAID items have PAID event": 0,
+    "Duplicate ledger postings": 0,
+    "BASE scenario has no adjustments": 0,
+    "Variance explainable (arithmetic + reason)": 0
+  },
+  "detection": [
+    {
+      "issue_type": "BALANCE_MISMATCH",
+      "ground_truth": 3,
+      "detected": 3,
+      "true_pos": 3,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "issue_type": "FX_RATE_MISSING",
+      "ground_truth": 6,
+      "detected": 6,
+      "true_pos": 6,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "issue_type": "DUPLICATE_FORECAST",
+      "ground_truth": 41,
+      "detected": 41,
+      "true_pos": 41,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "issue_type": "FORECAST_USES_ACTUAL",
+      "ground_truth": 41,
+      "detected": 41,
+      "true_pos": 41,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "issue_type": "CURRENCY_MIXED",
+      "ground_truth": 41,
+      "detected": 41,
+      "true_pos": 41,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  ],
+  "rows": {
+    "BankAccount": 150,
+    "CashFlowForecast": 20774,
+    "CurrencyRate": 899,
+    "DailyCashPosition": 27150,
+    "ForecastActualMatch": 14359,
+    "ForecastRun": 12,
+    "LedgerEntry": 100000,
+    "LegalEntity": 30,
+    "LiquidityScenario": 3,
+    "Payable": 7500,
+    "Receivable": 7500,
+    "ReviewDecision": 0,
+    "StatusEvent": 31544
+  }
+}

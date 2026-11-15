@@ -1,0 +1,398 @@
+[
+  {
+    "gt_id":"GT-000001",
+    "table_name":"CurrencyRate",
+    "record_id":"FX-2026-05-01-EUR",
+    "issue_type":"FX_RATE_MISSING",
+    "description":"EUR rate for 2026-05-01 deliberately removed",
+    "expected_decision":"USE_FALLBACK_RATE_AND_FLAG",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000002",
+    "table_name":"CurrencyRate",
+    "record_id":"FX-2026-05-27-EUR",
+    "issue_type":"FX_RATE_MISSING",
+    "description":"EUR rate for 2026-05-27 deliberately removed",
+    "expected_decision":"USE_FALLBACK_RATE_AND_FLAG",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000003",
+    "table_name":"CurrencyRate",
+    "record_id":"FX-2026-04-16-GBP",
+    "issue_type":"FX_RATE_MISSING",
+    "description":"GBP rate for 2026-04-16 deliberately removed",
+    "expected_decision":"USE_FALLBACK_RATE_AND_FLAG",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000004",
+    "table_name":"CurrencyRate",
+    "record_id":"FX-2026-02-19-INR",
+    "issue_type":"FX_RATE_MISSING",
+    "description":"INR rate for 2026-02-19 deliberately removed",
+    "expected_decision":"USE_FALLBACK_RATE_AND_FLAG",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000005",
+    "table_name":"CurrencyRate",
+    "record_id":"FX-2026-06-30-INR",
+    "issue_type":"FX_RATE_MISSING",
+    "description":"INR rate for 2026-06-30 deliberately removed",
+    "expected_decision":"USE_FALLBACK_RATE_AND_FLAG",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000006",
+    "table_name":"CurrencyRate",
+    "record_id":"FX-2026-05-31-JPY",
+    "issue_type":"FX_RATE_MISSING",
+    "description":"JPY rate for 2026-05-31 deliberately removed",
+    "expected_decision":"USE_FALLBACK_RATE_AND_FLAG",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000007",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000004",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000008",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000007",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000009",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000021",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000010",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000025",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000011",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000030",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000012",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000031",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000013",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000043",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000014",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000049",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000015",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000055",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000016",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000057",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000017",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000061",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000018",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000078",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000019",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000081",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000020",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000087",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000021",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000096",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000022",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000122",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000023",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000140",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000024",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000148",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000025",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000150",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000026",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000157",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000027",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000171",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000028",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000180",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000029",
+    "table_name":"Receivable",
+    "record_id":"REC-2026-000181",
+    "issue_type":"DELAYED_RECEIVABLE",
+    "description":"settled more than 14 days late",
+    "expected_decision":"MONITOR_COLLECTION",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000030",
+    "table_name":"Payable",
+    "record_id":"PAY-2026-000051",
+    "issue_type":"LARGE_ONE_OFF_PAYMENT",
+    "description":"one-off payment 5-12x typical size",
+    "expected_decision":"RESERVE_LIQUIDITY_BUFFER",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000031",
+    "table_name":"Payable",
+    "record_id":"PAY-2026-000057",
+    "issue_type":"LARGE_ONE_OFF_PAYMENT",
+    "description":"one-off payment 5-12x typical size",
+    "expected_decision":"RESERVE_LIQUIDITY_BUFFER",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000032",
+    "table_name":"Payable",
+    "record_id":"PAY-2026-000107",
+    "issue_type":"LARGE_ONE_OFF_PAYMENT",
+    "description":"one-off payment 5-12x typical size",
+    "expected_decision":"RESERVE_LIQUIDITY_BUFFER",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000033",
+    "table_name":"Payable",
+    "record_id":"PAY-2026-000133",
+    "issue_type":"LARGE_ONE_OFF_PAYMENT",
+    "description":"one-off payment 5-12x typical size",
+    "expected_decision":"RESERVE_LIQUIDITY_BUFFER",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000034",
+    "table_name":"Payable",
+    "record_id":"PAY-2026-000155",
+    "issue_type":"LARGE_ONE_OFF_PAYMENT",
+    "description":"one-off payment 5-12x typical size",
+    "expected_decision":"RESERVE_LIQUIDITY_BUFFER",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000035",
+    "table_name":"Payable",
+    "record_id":"PAY-2026-000178",
+    "issue_type":"LARGE_ONE_OFF_PAYMENT",
+    "description":"one-off payment 5-12x typical size",
+    "expected_decision":"RESERVE_LIQUIDITY_BUFFER",
+    "is_anomaly":0
+  },
+  {
+    "gt_id":"GT-000036",
+    "table_name":"BankAccount",
+    "record_id":"BANKACC-ENT-000002-003",
+    "issue_type":"BALANCE_MISMATCH",
+    "description":"statement balance differs from opening+ledger by -3825.75",
+    "expected_decision":"INVESTIGATE_AND_RECONCILE",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000037",
+    "table_name":"BankAccount",
+    "record_id":"BANKACC-ENT-000002-004",
+    "issue_type":"BALANCE_MISMATCH",
+    "description":"statement balance differs from opening+ledger by -3935.59",
+    "expected_decision":"INVESTIGATE_AND_RECONCILE",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000038",
+    "table_name":"BankAccount",
+    "record_id":"BANKACC-ENT-000005-003",
+    "issue_type":"BALANCE_MISMATCH",
+    "description":"statement balance differs from opening+ledger by 3557.35",
+    "expected_decision":"INVESTIGATE_AND_RECONCILE",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000039",
+    "table_name":"CashFlowForecast",
+    "record_id":"CF-2026-000515",
+    "issue_type":"FORECAST_USES_ACTUAL",
+    "description":"forecast_date taken from an actual settlement after the as-of date",
+    "expected_decision":"REJECT_ROW_FUTURE_INFORMATION",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000040",
+    "table_name":"CashFlowForecast",
+    "record_id":"CF-2026-000121",
+    "issue_type":"FORECAST_USES_ACTUAL",
+    "description":"forecast_date taken from an actual settlement after the as-of date",
+    "expected_decision":"REJECT_ROW_FUTURE_INFORMATION",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000041",
+    "table_name":"CashFlowForecast",
+    "record_id":"CF-2026-000774",
+    "issue_type":"DUPLICATE_FORECAST",
+    "description":"same source item forecast twice in one run",
+    "expected_decision":"EXCLUDE_DUPLICATE",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000042",
+    "table_name":"CashFlowForecast",
+    "record_id":"CF-2026-000775",
+    "issue_type":"DUPLICATE_FORECAST",
+    "description":"same source item forecast twice in one run",
+    "expected_decision":"EXCLUDE_DUPLICATE",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000043",
+    "table_name":"CashFlowForecast",
+    "record_id":"CF-2026-000199",
+    "issue_type":"CURRENCY_MIXED",
+    "description":"non-USD amount treated as USD (no conversion)",
+    "expected_decision":"RECONVERT_AT_AS_OF_RATE",
+    "is_anomaly":1
+  },
+  {
+    "gt_id":"GT-000044",
+    "table_name":"CashFlowForecast",
+    "record_id":"CF-2026-000435",
+    "issue_type":"CURRENCY_MIXED",
+    "description":"non-USD amount treated as USD (no conversion)",
+    "expected_decision":"RECONVERT_AT_AS_OF_RATE",
+    "is_anomaly":1
+  }
+]

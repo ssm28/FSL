@@ -1,0 +1,47 @@
+[
+  {
+    "entity_id":"ENT-000001",
+    "legal_name":"Entity 01 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000002",
+    "legal_name":"Entity 02 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000003",
+    "legal_name":"Entity 03 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000004",
+    "legal_name":"Entity 04 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  },
+  {
+    "entity_id":"ENT-000005",
+    "legal_name":"Entity 05 Holdings",
+    "country":"US",
+    "base_currency":"USD",
+    "status":"ACTIVE",
+    "effective_from":"2026-01-01",
+    "effective_to":null
+  }
+]

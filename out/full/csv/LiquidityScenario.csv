@@ -1,0 +1,4 @@
+scenario_id,name,description,receipt_delay_days,receipt_haircut_pct,payable_accel_days,fx_shock_pct
+SCN-BASE,Base,"Contractual dates, no adjustments",0,0.0,0,0.0
+SCN-DELAYED,Delayed receipts,All receipts arrive 14 days later than expected,14,0.0,0,0.0
+SCN-STRESS,Stress,"Receipts +21 days and 10% haircut, payables 7 days earlier, non-USD -10% vs USD",21,10.0,7,-10.0

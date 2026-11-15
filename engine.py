@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-DB = "data/liquidity.db"
+DB = "out/full/liquidity.db"
 SCHEMA = Path(__file__).with_name("schema.sql")
 ANOM = ["BALANCE_MISMATCH", "FX_RATE_MISSING", "DUPLICATE_FORECAST", "FORECAST_USES_ACTUAL", "CURRENCY_MIXED"]
 
